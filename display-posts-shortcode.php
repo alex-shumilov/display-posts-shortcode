@@ -141,6 +141,9 @@ function be_display_posts_shortcode( $atts ) {
 	if( !empty( $wrapper_id ) )
 		$wrapper_id = ' id="' . $wrapper_id . '"';
 
+	// If category empty use current page title
+	if ( empty( $category ) )
+		$category = get_the_title();
 	
 	// Set up initial query for post
 	$args = array(
